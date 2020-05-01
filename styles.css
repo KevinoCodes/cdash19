@@ -9,9 +9,7 @@ h1 {
 
 body {
 	margin: 0;
-	background-image: linear-gradient(#ffffff, #ffffff, #b4e5f1, #62B6CB);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background:"white";
 }
 
 /* Nav Bar */
@@ -21,7 +19,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #E7EDEF;
   top:0;
   padding-top:0;
   position:relative;
