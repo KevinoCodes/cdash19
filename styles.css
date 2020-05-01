@@ -19,10 +19,11 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #E7EDEF;
+  background-color: #397ae3;
   top:0;
   padding-top:0;
   position:relative;
+  color: #white;
 }
 
 li {
@@ -39,9 +40,10 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #2a5cad;
 }
 
 .active {
-  background-color: #62B6CB;
+  background-color: "white";
+  color: #black;
 }
