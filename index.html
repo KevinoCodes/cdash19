@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">	
+	<link rel="stylesheet" href="styles.css">
+	<link rel='stylesheet' href='https://unpkg.com/leaflet@1.4.0/dist/leaflet.css'/>
+        <script src='https://unpkg.com/leaflet@1.4.0/dist/leaflet.js'></script>	
 </head>
 
 <ul>
@@ -83,6 +85,8 @@ function magnify(imgID, zoom) {
 <p>Feel free to change the strength of the magnifier glass when initiating the magnify function.</p>
 
 <script>
+
+
 /* Initiate Magnify Function
 with the id of the image, and the strength of the magnifier glass:*/
 magnify("myimage", 3);
@@ -101,61 +105,20 @@ magnify("myimage", 3);
 <body>
 
 <right>
-<div id="mapid" style="width: 600px; height: 400px;" align = ></div>
-    
-</right>
+<div id="mapid" style="width: 600px; height: 400px;"></div>
 
-<h2>Top 10 Nations with most cases</h2>
-<p># of Infected and # of Recovered</p>
+<div id='map' style='width:100%; height:900'></div>
 
-    
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Points</th>
-  </tr>
-  <tr>
-    <td>Peter</td>
-    <td>Griffin</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>Lois</td>
-    <td>Griffin</td>
-    <td>$150</td>
-  </tr>
-  <tr>
-    <td>Joe</td>
-    <td>Swanson</td>
-    <td>$300</td>
-  </tr>
-  <tr>
-    <td>Cleveland</td>
-    <td>Brown</td>
-    <td>$250</td>
-  </tr>
-</table>
-  
-    
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-
-	var mymap = L.map('mapid').setView([43.6924, -79.4035], 13);
-
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/streets-v11',
-		tileSize: 512,
-		zoomOffset: -1
-	}).addTo(mymap);
-
-L.circle([18.2206,-63.0686],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:150}).addTo(map).bindPopup('Anguilla,United Kingdom : 3')
+ <script>
+        map = new L.Map('map');
+        var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+        cartoAttrib = 'Carto geodatabase is good for this application';
+        carto = new L.TileLayer(cartocdn);
+        map.setView([51.5, 0.12],2); // centered on London lat, long
+        map.addLayer(carto);
+        
+        
+      L.circle([18.2206,-63.0686],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:150}).addTo(map).bindPopup('Anguilla,United Kingdom : 3')
 L.circle([31.8257,117.2264],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:49250}).addTo(map).bindPopup('Anhui,China : 985')
 L.circle([12.5211,-69.9683],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:3650}).addTo(map).bindPopup('Aruba,Netherlands : 73')
 L.circle([-35.4735,149.0124],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:5050}).addTo(map).bindPopup('Australian Capital Territory,Australia : 101')
@@ -396,7 +359,26 @@ L.circle([61.52401,105.318756],{color:'red',fillColor:'#f03',fillOpacity:0.5,rad
 L.circle([61.92411,25.748151],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:140000}).addTo(map).bindPopup('Finland : 2800')
 L.circle([64.9631,-19.0208],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:82800}).addTo(map).bindPopup('Iceland : 1656')
 
+</right>
 
+<h2>Top 10 Nations with most cases</h2>
+<p># of Infected and # of Recovered</p>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+
+	var mymap = L.map('mapid').setView([43.6924, -79.4035], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
 </script>   
 
 
