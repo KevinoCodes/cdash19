@@ -23,12 +23,12 @@ ul {
   top:0;
   padding-top:0;
   position:relative;
-  color: "white";
 }
 
 li {
   float: left;
-  font-family: helvetica
+  font-family: helvetica;
+  colour: white;
 }
 
 li a {
