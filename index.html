@@ -4,6 +4,8 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<script src="https://cdn-webgl.wrld3d.com/wrldjs/dist/latest/wrld.js"></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css" rel="stylesheet" />
 </head>
 
 <ul>
@@ -24,7 +26,6 @@
  <script>
         map = new L.Map('map');
         var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
-        cartoAttrib = 'Carto geodatabase is good for this application';
         carto = new L.TileLayer(cartocdn);
         map.setView([51.5, 0.12],2); // centered on London lat, long
         map.addLayer(carto);
