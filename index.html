@@ -27,6 +27,16 @@
 </body>
 
  <script>
+	
+largest = 0;
+
+for (i = 0; i < data.length; i++) {
+    if (data[i] > largest) {
+        largest = data[i];
+    }
+}
+console.log(largest);​
+	 
         map = new L.Map('map');
         var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
         carto = new L.TileLayer(cartocdn);
