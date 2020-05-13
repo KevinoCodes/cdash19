@@ -11,16 +11,14 @@
    crossorigin=""></script>
 
 	<script src="data.json"></script>
-	
-	<ul>
+</head>
+
+<ul>
 	<!-- Nav Bar -->
 	<li><a class="active" href="index.html">Home</a></li>
 	<li><a href="details.html">Details</a></li>
 	<li><a href="about.html">About</a></li>
 </ul>
-
-</head>
-
 
 <h1>Covid-19 Dashboard</h1>
 
@@ -31,7 +29,7 @@
 <div id="mapid" style="width: 600px; height: 400px;"></div>
 
  <script>
-var mymap = L.map('mapid').setView([43.6924, -79.4035], 13);
+var map = L.map('mapid').setView([43.6924, -79.4035], 13);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -41,7 +39,7 @@ var mymap = L.map('mapid').setView([43.6924, -79.4035], 13);
 		id: 'mapbox/streets-v11',
 		tileSize: 512,
 		zoomOffset: -1
-	}).addTo(mymap);
+	}).addTo(map);
 	 
 	L.circle([18.2206,-63.0686],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:150}).addTo(map).bindPopup('Anguilla,United Kingdom : 3')
 	L.circle([31.8257,117.2264],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:49250}).addTo(map).bindPopup('Anhui,China : 985')
@@ -282,7 +280,7 @@ var mymap = L.map('mapid').setView([43.6924, -79.4035], 13);
 	L.circle([60.472,8.4689],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:1600}).addTo(map).bindPopup('Norway : 32')
 	L.circle([61.52401,105.318756],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:514300}).addTo(map).bindPopup('Russia : 10286')
 	L.circle([61.92411,25.748151],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:140000}).addTo(map).bindPopup('Finland : 2800')
-	L.circle([64.9631,-19.0208],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:82800}).addTo(map).bindPopup('Iceland : 1656').addTo(map);
+	L.circle([64.9631,-19.0208],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:82800}).addTo(map).bindPopup('Iceland : 1656')
 		
 </script>
 
