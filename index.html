@@ -25,28 +25,12 @@
 </body>
 
  <script>
-	 
-	var c = document.getElementById("graph");
-	var ctx = c.getContext("2d");
-	ctx.linewidth= 2;
-	
-	largest = 0;
-
-	for (Confirmed = 0; i < data.length; Confirmed++) {
-    		if (data[Confirmed] > largest) {
-        	largest = data[Confirmed];
-		ctx.fillStyle = "white";
-		ctx.fillRect(0,y,largest/2,50)
-   		}
-	}
-	console.log(largest);​
 
         var map = L.Map('map');
         var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
         carto = new L.TileLayer(cartocdn);
         map.setView([51.5, 0.12],2); // centered on London lat, long
         map.addLayer(carto);
-	circle.addTo(map);
 	 
 	var circle = (L.circle([18.2206,-63.0686],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:150}).addTo(map).bindPopup('Anguilla,United Kingdom : 3')
 	L.circle([31.8257,117.2264],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:49250}).addTo(map).bindPopup('Anhui,China : 985')
