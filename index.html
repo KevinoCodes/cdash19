@@ -27,16 +27,21 @@
 </body>
 
  <script>
-	
-largest = 0;
-
-for (Confirmed = 0; i < data.length; Confirmed++) {
-    if (data[Confirmed] > largest) {
-        largest = data[Confirmed];
-    }
-}
-console.log(largest);​
 	 
+	var c = document.getElementById("graph");
+	var ctx = c.getContext("2d");
+	
+	largest = 0;
+
+	for (Confirmed = 0; i < data.length; Confirmed++) {
+    		if (data[Confirmed] > largest) {
+        	largest = data[Confirmed];
+		ctx.fillStyle = "white";
+		ctx.fillRect(0,y,data[Confirmed]/2,50)
+   		}
+	}
+	console.log(largest);​
+
         map = new L.Map('map');
         var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
         carto = new L.TileLayer(cartocdn);
