@@ -23,7 +23,9 @@
 
 <body>
 
+<center>
 <div id="mapid" style="width: 1000px; height: 700px;"></div>
+</center>
 
  <script>
 var map = L.map('mapid').setView([65, -100], 3);
@@ -312,7 +314,7 @@ var map = L.map('mapid').setView([65, -100], 3);
 			if (myinput == data[country]["Country/Region"]{
 				ctx.font = "20px helvetica"
 				ctx.fillStyle = "white";
-				ctx.fillRect(0,y,data[country].Deaths/5,50)
+				ctx.fillRect(0,y,data[country]["Deaths"]/5,50)
 				
 
 		y=y+60
