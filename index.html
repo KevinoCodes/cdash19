@@ -23,8 +23,6 @@
 
 <body>
 
-<canvas id="graph" style="width=900px height=700px"></canvas>	
-
 <div id="mapid" style="width: 1000px; height: 700px;"></div>
 
  <script>
@@ -314,9 +312,9 @@ var map = L.map('mapid').setView([43.6924, -79.4035], 50);
 			if (myinput == data[Country/Region].Name){
 				ctx.font = "20px helvetica"
 				ctx.fillStyle = "white";
-				ctx.fillRect(0,y,data[Country/Region][Deaths]/2,50)
+				ctx.fillRect(0,y,data["Country/Region"]["Deaths"]/10,50)
 				ctx.fillStyle = "white";
-				ctx.fillText(data[Country/Region][Deaths]+"Deaths");
+				ctx.fillText(data["Country/Region"]["Deaths"]+"Deaths");
 				
 
 				y=y+60
