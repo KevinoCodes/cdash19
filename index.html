@@ -282,6 +282,51 @@ var map = L.map('mapid').setView([43.6924, -79.4035], 13);
 	L.circle([64.9631,-19.0208],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:82800}).addTo(map).bindPopup('Iceland : 1656')
 		
 </script>
+	
+<h2>Enter Country Name:</h2><input text="text" id="mysearch">
+<button onclick="drawgraph()">Submit</button>
+<h3 id="results"></h3>
+
+<button onclick="cleargraph()">Clear</button>
+
+</center>
+
+<canvas id="graph" width="900" height="700"></canvas>
+
+<script>
+
+	function cleargraph() {
+		var c = document.getElementById("graph");
+		var ctx = c.getContext("2d");
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	}
+
+	function drawgraph() {
+
+		var myinput = document.getElementById("mysearch").value;
+		
+		var c = document.getElementById("graph");
+		var ctx = c.getContext("2d");
+
+		y=0
+
+		for (country=0; country < data.length; country++) {
+			if (myinput == data[country].Name){
+				ctx.font = "20px helvetica"
+				ctx.fillStyle = "white";
+				ctx.fillRect(0,y,data[country]["Value"]*10,50)
+				ctx.fillStyle = "white";
+				ctx.fillText(data[country]["Value"]+"%"+", "+data[country]["TimePeriod"],data[country]["Value"]*10+10,y+25);
+				
+
+				y=y+60
+				
+
+			}
+		}
+	}
+
+</script>
 
 </body>
 
