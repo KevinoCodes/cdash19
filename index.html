@@ -311,12 +311,12 @@ var map = L.map('mapid').setView([43.6924, -79.4035], 13);
 		y=0
 
 		for (country=0; country < data.length; country++) {
-			if (myinput == data[country].Name){
+			if (myinput == data[Country/Region].Name){
 				ctx.font = "20px helvetica"
 				ctx.fillStyle = "white";
-				ctx.fillRect(0,y,data[country]["Value"]*10,50)
+				ctx.fillRect(0,y,data[Country/Region][Deaths]/2,50)
 				ctx.fillStyle = "white";
-				ctx.fillText(data[country]["Value"]+"%"+", "+data[country]["TimePeriod"],data[country]["Value"]*10+10,y+25);
+				ctx.fillText(data[Country/Region][Deaths]+"Deaths");
 				
 
 				y=y+60
