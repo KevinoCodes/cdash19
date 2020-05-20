@@ -295,24 +295,28 @@ var map = L.map('mapid').setView([65, -100], 3);
 		
 </script>
 
+<center>
+
 <button onclick="recovered()">Recovered Cases</button>
 	
-<h2>Enter Country Name:</h2><input text="text" id="mysearch">
+<h2 class="subtitle">Enter Country Name:</h2><input text="text" id="mysearch">
+
+
+
 <button onclick="drawgraph()">Submit</button>
-<h3 id="results"></h3>
+
 
 </center>
 
+<br>
+
+<center>
+
 <canvas id="graph" width="900" height="700"></canvas>
 
+</center>
+
 <script>
-
-	function cleargraph() {
-
-		var c = document.getElementById("graph");
-		var ctx = c.getContext("2d");
-		ctx.clearRect(0, 0, c.width, c.height);
-	}
 
 	function drawgraph() {
 
@@ -320,13 +324,16 @@ var map = L.map('mapid').setView([65, -100], 3);
 		
 		var c = document.getElementById("graph");
 		var ctx = c.getContext("2d");
+		ctx.clearRect(0, 0, c.width, c.height);
+		ctx.fillStyle = "white";
+		ctx.fillRect(0, 0, c.width, c.height);
 
 		y=0
 
 		for (country=0; country < data.length; country++) {
 			if (myinput == data[country]["Country/Region"]){
 				ctx.font = "20px helvetica"
-				ctx.fillStyle = "white";
+				ctx.fillStyle = "#397ae3";
 				ctx.fillRect(0,y,data[country]["Deaths"]/5,50)
 				
 
@@ -340,10 +347,6 @@ var map = L.map('mapid').setView([65, -100], 3);
 	
 
 </script>
-
-<br>
-
-<button onclick="cleargraph()">Clear</button>
 
 </body>
 
