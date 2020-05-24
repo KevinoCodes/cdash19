@@ -27,7 +27,7 @@
 
 		function recovered() {
 
-			map.removeLayer(location);
+			
 
 			L.circle([18.2206,-63.0686],{color:'green',fillColor:'#00ff40',fillOpacity:0.5,radius:150}).addTo(map).bindPopup('Anguilla,United Kingdom : 3')
 			L.circle([31.8257,117.2264],{color:'green',fillColor:'#00ff40',fillOpacity:0.5,radius:49250}).addTo(map).bindPopup('Anhui,China : 985')
@@ -691,6 +691,22 @@ var map = L.map('mapid').setView([65, -100], 3);
 
 		for (country=0; country < data.length; country++) {
 			if (myinput == data[country]["Country/Region"]){
+				ctx.font = "20px helvetica"
+				ctx.fillStyle = "#397ae3";
+				ctx.fillRect(0,y,data[country]["Deaths"]/5,50)
+				ctx.fillStyle = "#397ae3";
+				ctx.fillText(data[country]["Province/State"] + ": " + data[country]["Deaths"],data[country]["Deaths"]/5+10,y+25);
+				
+				y=y+60
+				//c.height=y;
+				//console.log(Math.max(y));
+				
+
+			}
+		}
+
+		for (country=0; country < data.length; country++) {
+			if (myinput == data[country]["Country/Region"].toLowerCase()){
 				ctx.font = "20px helvetica"
 				ctx.fillStyle = "#397ae3";
 				ctx.fillRect(0,y,data[country]["Deaths"]/5,50)
